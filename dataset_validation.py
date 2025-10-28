@@ -96,9 +96,9 @@ if 'cleaned_df' not in st.session_state:
 if st.session_state.page == 'home':
     st.title("Dataset Validation and Cleaning")
     st.title("by joe_wevil")
-    st.write("Upload file dataset Anda (CSV atau XLSX) untuk memulai.")
+    st.write("Upload your files dataset  (CSV or XLSX) to begin.")
     
-    uploaded_file = st.file_uploader("Pilih file", type=['csv', 'xlsx'])
+    uploaded_file = st.file_uploader("choose here", type=['csv', 'xlsx'])
     
     if uploaded_file is not None:
         try:
@@ -159,7 +159,7 @@ elif st.session_state.page == 'results':
     if st.session_state.validation_result:
         result = st.session_state.validation_result
         st.write(f"The number of validated data in the column '{result['column']}': {result['total']}")
-        st.write(f"Validation results '{result['type']}': {result['error_count']} data bermasalah.")
+        st.write(f"Validation results '{result['type']}': {result['error_count']} problematic dataset found.")
         
         if result['error_count'] > 0:
             # Ambil minimal 10 baris lengkap (semua kolom) dari data bermasalah
@@ -251,3 +251,4 @@ elif st.session_state.page == 'cleaned':
         if st.button("Back"):
             st.session_state.page = 'preview'
             st.rerun()
+

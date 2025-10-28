@@ -95,7 +95,7 @@ if 'cleaned_df' not in st.session_state:
 # Halaman Pertama: Upload dan Judul
 if st.session_state.page == 'home':
     st.title("Dataset Validation and Cleaning")
-    st.title("by joe_wevil")
+    st.title("by Joob OPH")
     st.write("Upload your files dataset  (CSV or XLSX) to begin.")
     
     uploaded_file = st.file_uploader("choose here", type=['csv', 'xlsx'])
@@ -251,4 +251,5 @@ elif st.session_state.page == 'cleaned':
         if st.button("Back"):
             st.session_state.page = 'preview'
             st.rerun()
+
 
